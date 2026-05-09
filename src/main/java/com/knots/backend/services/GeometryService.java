@@ -32,9 +32,9 @@ public class GeometryService {
         for (CrossingSpecsRolf c : c_specs) {
             crossingSpecsList.add(
                     List.of(
+                            c.getCrossingId(),
                             c.getUnderLine(),
-                            c.getOverLine(),
-                            c.getCrossingId()
+                            c.getOverLine()
                     )
             );
         }

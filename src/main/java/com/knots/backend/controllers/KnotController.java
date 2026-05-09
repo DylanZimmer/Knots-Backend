@@ -18,4 +18,9 @@ public class KnotController {
     public List<KnotDto> getGroupedKnots() {
         return knotService.getGroupedKnots();
     }
+
+    @GetMapping("/diagram_id")
+    public Integer getDiagramId( @RequestParam("num_crossings") int numCrossings, @RequestParam("rolf_index") int rolfIndex) {
+        return knotService.getDiagramId(numCrossings, rolfIndex);
+    }
 }

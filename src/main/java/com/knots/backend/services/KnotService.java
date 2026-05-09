@@ -19,4 +19,8 @@ public class KnotService {
                 Arrays.asList((String[]) row[1])
         )).toList();
     }
+
+    public Integer getDiagramId(int crossing_num, int rolf_index) {
+        return knotRepo.findDiagramId(crossing_num, rolf_index);
+    }
 }
