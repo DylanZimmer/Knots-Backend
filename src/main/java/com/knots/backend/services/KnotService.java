@@ -20,7 +20,7 @@ public class KnotService {
         )).toList();
     }
 
-    public Integer getDiagramId(int crossing_num, int rolf_index) {
+    public Integer getDiagramId(String crossing_num, String rolf_index) {
         return knotRepo.findDiagramId(crossing_num, rolf_index);
     }
 }

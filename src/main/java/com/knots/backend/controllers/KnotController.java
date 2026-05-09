@@ -20,7 +20,7 @@ public class KnotController {
     }
 
     @GetMapping("/diagram_id")
-    public Integer getDiagramId( @RequestParam("num_crossings") int numCrossings, @RequestParam("rolf_index") int rolfIndex) {
+    public Integer getDiagramId( @RequestParam("num_crossings") String numCrossings, @RequestParam("rolf_index") String rolfIndex) {
         return knotService.getDiagramId(numCrossings, rolfIndex);
     }
 }

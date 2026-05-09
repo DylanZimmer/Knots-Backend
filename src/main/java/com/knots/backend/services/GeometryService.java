@@ -25,9 +25,9 @@ public class GeometryService {
         List<CrossingSpecsRolf> c_specs =
                 crossingSpecsRepo.findAllByDiagramIdOrderByCrossingIdAsc(diagramId);
 
-        List<List<Integer>> crossingSpecsList = new ArrayList<>();
-        List<List<Integer>> verticesList = new ArrayList<>();
+        List<List<Integer>> vertexPositionsList = new ArrayList<>();
         List<List<Integer>> arrowsList = new ArrayList<>();
+        List<List<Integer>> crossingSpecsList = new ArrayList<>();
 
         for (CrossingSpecsRolf c : c_specs) {
             crossingSpecsList.add(
@@ -39,7 +39,7 @@ public class GeometryService {
             );
         }
         for (VerticesAndArrowsRolf va : vs_and_as) {
-            verticesList.add(
+            vertexPositionsList.add(
                     List.of(
                             va.getStrandX(),
                             va.getStrandY()
@@ -54,7 +54,7 @@ public class GeometryService {
         }
 
         return new GeometryDto(
-                verticesList,
+                vertexPositionsList,
                 arrowsList,
                 crossingSpecsList
         );
