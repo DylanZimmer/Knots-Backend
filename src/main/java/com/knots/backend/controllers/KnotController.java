@@ -14,7 +14,7 @@ public class KnotController {
 
     private final KnotService knotService;
 
-    @GetMapping("/crossing_groups")
+    @GetMapping("/rolf_names")
     public List<KnotDto> getGroupedKnots() {
         return knotService.getGroupedKnots();
     }
