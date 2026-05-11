@@ -155,4 +155,24 @@ public class GeometryService {
         crossingSpecsRepo.saveAll(c_specs_copy);
     }
 
+    @Transactional
+    public void performMirror() {
+        List<CrossingSpecs> c_specs = crossingSpecsRepo.findAll();
+        for (CrossingSpecs c : c_specs) {
+            int temp = c.getUnderLine();
+            c.setUnderLine(c.getOverLine());
+            c.setOverLine(temp);
+        }
+    }
+
+    @Transactional
+    public void performOrientationFlip() {
+        List<VerticesAndArrows> vs_and_as = verticesAndArrowsRepo.findAll();
+        for (VerticesAndArrows va : vs_and_as) {
+            int temp = va.getStartPoint();
+            va.setStartPoint(va.getEndPoint());
+            va.setEndPoint(temp);
+        }
+    }
+
 }

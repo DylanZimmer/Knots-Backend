@@ -23,12 +23,20 @@ public class GeometryController {
         return geometryService.getGeometryByDiagramId(diagramId);
     }
 
-
-
-
-    @PostMapping("/diagrams/copy_over")
+    @PostMapping("copy_over")
     public void copyGeometryByDiagramId(@RequestParam Integer diagramId) {
         geometryService.clearCurrentGeometry();
         geometryService.copyGeometryByDiagramId(diagramId);
     }
+
+    @PostMapping("/mirror")
+    public void performMirror() {
+        geometryService.performMirror();
+    }
+
+    @PostMapping("/orientation_flip")
+    public void performOrientationFlip() {
+        geometryService.performOrientationFlip();
+    }
+
 }
