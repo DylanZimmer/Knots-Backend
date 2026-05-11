@@ -15,7 +15,7 @@ public class CrossingSpecsRolf {
     private int underLine;
     private int overLine;
     @Column(name="crossing_x")
-    private int crossingX;
+    private Integer crossingX;
     @Column(name="crossing_y")
-    private int crossingY;
+    private Integer crossingY;
 }

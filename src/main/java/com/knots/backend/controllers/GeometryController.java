@@ -14,7 +14,21 @@ public class GeometryController {
     private final GeometryService geometryService;
 
     @GetMapping("/diagram_info")
+    public GeometryDto getGeometryByDiagramId() {
+        return geometryService.getCurrentGeometry();
+    }
+
+    @GetMapping("/diagram_info_rolf")
     public GeometryDto getGeometryByDiagramId(@RequestParam Integer diagramId) {
         return geometryService.getGeometryByDiagramId(diagramId);
+    }
+
+
+
+
+    @PostMapping("/diagrams/copy_over")
+    public void copyGeometryByDiagramId(@RequestParam Integer diagramId) {
+        geometryService.clearCurrentGeometry();
+        geometryService.copyGeometryByDiagramId(diagramId);
     }
 }
