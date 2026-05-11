@@ -25,4 +25,12 @@ public interface KnotRepo extends JpaRepository<Knots, Integer> {
         AND k.rolfIndex = :ri
     """)
     Integer findDiagramId(String nc, String ri);
+
+    @Query("""
+        SELECT knotId
+        FROM Knots
+        WHERE numCrossings = :nc
+        AND rolfIndex = :ri
+    """)
+    Integer findKnotId(String nc, String ri);
 }
